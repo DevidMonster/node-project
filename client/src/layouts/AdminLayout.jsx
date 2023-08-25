@@ -62,7 +62,9 @@ const AdminLayout = () => {
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className="demo-logo-vertical" />
+                <div className="demo-logo-vertical">
+                    <NavLink to={'/admin'} style={{ color: 'white', fontSize: '25px', fontWeight: 'bold', margin: '10px 0', textAlign: 'center', width: '100%', display: 'block' }}>{!collapsed ? 'DevidMonster' : 'D'}</NavLink>
+                </div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
             </Sider>
             <Layout>

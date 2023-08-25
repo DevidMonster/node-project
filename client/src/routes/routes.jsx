@@ -13,6 +13,7 @@ import AddUser from '../Pages/admin/user/AddUser';
 import EditUser from '../Pages/admin/user/EditUser';
 import TrashPage from '../Pages/admin/post/TrashPage';
 import Comments from '../Pages/admin/Comments';
+import DashBoard from '../Pages/admin/DashBoard';
 
 const router = createBrowserRouter([
     {path: '/', element: <DefaultLayout/>, children: [
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
         {path: '/signup', element: <SignupPage/>},
     ]},
     {path: '/admin', element: <AdminLayout/>, children: [
+        {path: '', element: <DashBoard/>},
         {path: 'posts', element: <PostList/>},
         {path: 'posts/trash', element: <TrashPage/>},
         {path: 'posts/add', element: <AddPost/>},

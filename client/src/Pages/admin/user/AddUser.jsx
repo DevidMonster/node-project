@@ -154,16 +154,20 @@ function AddUser() {
                     ]}
                 />
             </Form.Item>
-            <Upload
-                name="avatar"
-                beforeUpload={handleBeforeUpload}
-                customRequest={dummyRequest}
-                onChange={handleOnChange}
-                listType="picture"
-                fileList={fileList}
+            <Form.Item
+                label='Choose avatar'
             >
-                {fileList.length === 1 ? "" : <Button icon={<UploadOutlined />}>Click to Upload</Button>}
-            </Upload>
+                <Upload
+                    name="avatar"
+                    beforeUpload={handleBeforeUpload}
+                    customRequest={dummyRequest}
+                    onChange={handleOnChange}
+                    listType="picture"
+                    fileList={fileList}
+                >
+                    {fileList.length === 1 ? "" : <Button icon={<UploadOutlined />}>Click to Upload</Button>}
+                </Upload>
+            </Form.Item>
             <Form.Item style={{ margin: '20px 0' }}>
                 <Button type="primary" htmlType="submit">
                     Add
