@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config()
+
 const connecting = () => {
     try {
-        mongoose.connect("mongodb://127.0.0.1:27017/project1")
+        mongoose.connect(process.env.MONGO_URL)
         console.log("Connected to Mongoose server successfully");
     } catch (error) {
         console.log("Error connecting: ", error);
