@@ -2,13 +2,20 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from 'cors';
 import { errorHandler } from "./middlewares/erroHandler";
+import "reflect-metadata"
+import { appDataSoruce } from "./config/db";
+import postRouter from './routes/post'
 
 dotenv.config();
 
 const app = express();
+app.use(cors({ origin: true, credentials: true }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: '*' }))
+
+app.use('/api', postRouter)
+
+appDataSoruce()
 
 app.use(errorHandler)
 

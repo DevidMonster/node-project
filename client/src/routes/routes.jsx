@@ -18,7 +18,7 @@ import DashBoard from '../Pages/admin/DashBoard';
 const router = createBrowserRouter([
     {path: '/', element: <DefaultLayout/>, children: [
         {path: '/', element: <HomePage/>},
-        {path: '/post/:slug', element: <PostDetail/>},
+        {path: '/post/:id', element: <PostDetail/>},
         {path: '/login', element: <LoginPage/>},
         {path: '/signup', element: <SignupPage/>},
     ]},

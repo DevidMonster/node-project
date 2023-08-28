@@ -9,29 +9,29 @@ import { io } from 'socket.io-client';
 // eslint-disable-next-line react/prop-types
 function PostComment({ postId, style = {} }) {
     const [commentValue, setCommentValue] = useState('')
-    const [socket, setSocket] = useState(null)
-    const [message, setMessage] = useState("")
+    // const [socket, setSocket] = useState(null)
+    // const [message, setMessage] = useState("")
     const user = useSelector(state => state.authReducer.user)
     const { data, isLoading, refetch } = useFetchByIdQuery(postId)
     const [createComment] = useCreateCommentMutation()
 
-    useEffect(() => {
-        const newSocket = io('http://localhost:8000')
-        setSocket(newSocket)
+    // useEffect(() => {
+    //     const newSocket = io('http://localhost:8000')
+    //     setSocket(newSocket)
         
-        return () => {
-            newSocket.disconnect()
-        }
-    }, [])
+    //     return () => {
+    //         newSocket.disconnect()
+    //     }
+    // }, [])
 
-    useEffect(() => {
-        if (socket === null) return
-        socket.emit('comment', commentValue)
-        socket.on('comment', (res) => {
-            setMessage(res.message)
-            refetch()
-        })
-    }, [socket, data])
+    // useEffect(() => {
+    //     if (socket === null) return
+    //     socket.emit('comment', commentValue)
+    //     socket.on('comment', (res) => {
+    //         setMessage(res.message)
+    //         refetch()
+    //     })
+    // }, [socket, data])
 
     const handleComment = () => {
         createComment({

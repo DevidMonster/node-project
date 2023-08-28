@@ -13,7 +13,7 @@ const postApi = createApi({
       providesTags: ["post", "comment"],
     }),
     fetchOne: builder.query({
-      query: (slug) => "/posts/" + slug,
+      query: (id) => "/posts/" + id,
       providesTags: ["post"],
     }),
     fetchById: builder.query({
